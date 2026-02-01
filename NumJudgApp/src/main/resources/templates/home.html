@@ -17,13 +17,14 @@
 </head>
 <body>
 	<div class="text-center">
-		<form method="post" th:action="@{/home}" class="form-Numjudg">
+		<form method="post" th:action="@{/home}" class="form-Numjudg" th:object="${numJudgForm}">
 			<h1 class="h1 mt-5">数字判定アプリ</h1>
 			<br />
 			<!--数値入力欄-->
 			<div>
 				<label for="inputNum">数値入力：</label>
-				<input id="inputNum" type="text" class="form-control text-center" th:name="inputNum"/>
+				<input id="inputNum" type="text" class="form-control text-center" th:name="inputNum" th:field="*{inputNum}" th:errorclass="is-invalid"/>
+				<div class="invalid-feedback" th:errors="*{inputNum}"></div>
 			</div>
 			<!--判定ボタン-->
 			<input type="submit" th:value="判定" class="btn btn-primary mt-3"/>
