@@ -1,0 +1,5 @@
+CREATE TABLE IF NOT EXISTS num_judg(
+id INT AUTO_INCREMENT PRIMARY KEY,
+input_num INT,
+result VARCHAR(10)
+);

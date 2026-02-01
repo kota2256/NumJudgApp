@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-wideth, initial-scale-1, shrink-tofit=no">
-		<title>NumJudgResult</title>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+	
+	<title>NumJudgResult</title>
 		
-		<!--CSS読み込み-->
-		<link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
-		<link rel="stylesheet" th:href="@{/css/numJudg.css}">
+	<!--CSS読み込み-->
+	<link rel="stylesheet" th:href="@{/css/numJudg.css}">
 
-		<!--JS読み込み-->
-		<script th:src="@{/webjars/jquery/jquery.min.js}" defer></script>
-		<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}" defer></script>
-		
 </head>
 <body>
-	<h2>結果画面</h2>
+	<div  class="text-center form-Numjudg">
+		<h1  class="h1 mt-5">結果画面</h1>
+		<br />
+		<table th:object="${numJudgForm}" class="table mx-auto">
+			<tr>
+				<td>入力値：</td>
+				<td th:text="*{inputNum}"></td>
+			</tr>
+			<tr>
+				<td>判定結果：</td>
+				<td th:text="*{result}"></td>
+			</tr>
+		</table>
+	</div>
+	
+ 	<!-- Optional JavaScript -->
+ 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+ 	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+ 	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+ 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 </body>
 </html>
