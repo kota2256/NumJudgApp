@@ -7,6 +7,7 @@ import com.example.model.MNum;
 import com.example.repository.NumMapper;
 import com.example.service.EvenJudgService;
 import com.example.service.NumJudgService;
+import com.example.service.PerfectJudgService;
 import com.example.service.PrimeJudgService;
 
 @Service
@@ -18,6 +19,8 @@ public class NumJudgServiceImpl implements NumJudgService {
 	private EvenJudgService evenJudgService;
 	@Autowired
 	private PrimeJudgService primeJudgService;
+	@Autowired
+	private PerfectJudgService perfectJudgService;
 	
 	/** 入力番号登録 */
 	@Override
@@ -29,7 +32,9 @@ public class NumJudgServiceImpl implements NumJudgService {
 	public String numJudg(int inputNum) {
 		String result = "未判定";
 		
-		if(primeJudgService.primeJudg(inputNum)) {
+		if(perfectJudgService.perfectJudg(inputNum)) {
+			result = "完全数";
+		} else if(primeJudgService.primeJudg(inputNum)) {
 			result = "素数";
 		} else if(evenJudgService.evenJudg(inputNum)) {
 			result = "偶数";
