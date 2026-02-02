@@ -1,11 +1,16 @@
 package com.example.service;
 
+import java.util.List;
+
 import com.example.model.MNum;
 
 public interface NumJudgService {
 	
 	/** 入力番号登録 */
 	public void addNum(MNum num);
+	
+	/** 5件取得 */
+	public List<MNum> getFive();
 
 	/** 判定結果を返す */
 	public String numJudg(int inputNum, MNum mNum);

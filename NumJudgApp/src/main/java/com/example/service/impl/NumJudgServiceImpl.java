@@ -1,5 +1,7 @@
 package com.example.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -31,6 +33,12 @@ public class NumJudgServiceImpl implements NumJudgService {
 		mapper.insertOne(num);
 	};
 	
+	/** 5件取得 */
+	public List<MNum> getFive(){
+		return mapper.findFive();
+	}
+	
+	
 	/** 前回数値取得 */
 	public MNum getOne() {
 		return mapper.findOne();
@@ -51,7 +59,6 @@ public class NumJudgServiceImpl implements NumJudgService {
 			} else {
 				result = "奇数";
 		};
-		
 		
 		return result;
 	}

@@ -17,8 +17,16 @@
 		)
 	</insert>
 	
+	<!-- 5件取得 -->
+	<select id="findFive">
+		SELECT *
+		FROM  num_judg
+		ORDER BY id DESC
+		LIMIT 5
+	</select>
+	
 	<!--前回数値取得-->
-	<select id = "findOne">
+	<select id="findOne">
 		SELECT *
 		FROM num_judg
 		ORDER BY id DESC

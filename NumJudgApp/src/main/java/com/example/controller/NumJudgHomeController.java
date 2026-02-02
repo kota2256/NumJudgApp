@@ -27,12 +27,12 @@ public class NumJudgHomeController {
 	
 	/** 数値入力画面表示 */
 	@GetMapping("/home")
-	public String getHome(@ModelAttribute NumJudgForm form) { 		//空のモデルをセット
+	public String getHome(@ModelAttribute NumJudgForm form) { 		//空のモデルをセット（バリデーション時の再表示用）
 		return "home";
 	}
 	
-	/** 数値登録処理 */
-	@PostMapping("/home")
+	/** 数値判定&登録処理 */
+	@PostMapping("/judg")
 	public String postNumJudg(@ModelAttribute @Validated NumJudgForm form, BindingResult bindingResult, RedirectAttributes redirectAttributes) {
 		//入力数値のバリデーション
 		if (bindingResult.hasErrors()) {
@@ -46,11 +46,12 @@ public class NumJudgHomeController {
 		MNum num = new MNum();
 		num.setInputNum(form.getInputNum());
 		num.setResult(result);
+		
 		//db登録
 		service.addNum(num);
 		
 		//リダイレクト先に値を渡す
-		form = modelMapper.map(num, NumJudgForm.class);
+		form = modelMapper.map(num, NumJudgForm.class);		//numをformに詰め替える必要ない？
 		redirectAttributes.addFlashAttribute("numJudgForm", form);
 		
 		log.info(form.toString());
