@@ -8,7 +8,9 @@ public interface NumJudgService {
 	public void addNum(MNum num);
 
 	/** 判定結果を返す */
-	public String numJudg(int inputNum);
+	public String numJudg(int inputNum, MNum mNum);
 	
+	/** 前回数値取得 */
+	public MNum getOne();
 	
 }

@@ -7,6 +7,10 @@ import com.example.model.MNum;
 @Mapper
 public interface NumMapper {
 
-	/** ユーザー登録 */
+	/** 数値登録 */
 	public int insertOne(MNum num);
+	
+	/** 前回数値取得 */
+	public MNum findOne();
+	
 }

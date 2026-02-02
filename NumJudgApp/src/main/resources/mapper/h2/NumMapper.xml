@@ -16,5 +16,13 @@
 			,#{result}
 		)
 	</insert>
+	
+	<!--前回数値取得-->
+	<select id = "findOne">
+		SELECT *
+		FROM num_judg
+		ORDER BY id DESC
+		LIMIT 1
+	</select>
 
 </mapper>

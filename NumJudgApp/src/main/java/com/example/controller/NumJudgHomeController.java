@@ -40,7 +40,7 @@ public class NumJudgHomeController {
 		}
 		
 		//判定結果を取得
-		String result = service.numJudg(form.getInputNum());
+		String result = service.numJudg(form.getInputNum(), service.getOne());
 		
 		//MNumに値を詰める
 		MNum num = new MNum();
