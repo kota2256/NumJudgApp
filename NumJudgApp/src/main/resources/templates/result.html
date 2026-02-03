@@ -12,6 +12,16 @@
 	<!--CSS読み込み-->
 	<link rel="stylesheet" th:href="@{/css/numJudg.css}">
 
+<!--	<script th:inline="javascript">-->
+<!--	    var result = document.getElementById("result");-->
+<!--		if(result == "奇数"){-->
+<!--			result.style.color = "red";-->
+<!--		}else if(result == "偶数"){-->
+<!--			result.style.color = "blue";-->
+<!--		}else if (result == "素数"){-->
+<!--			result.style.color = "green";-->
+<!--		};-->
+<!--	</script>-->
 </head>
 <body>
 	<div  class="text-center form-Numjudg">
@@ -24,7 +34,15 @@
 			</tr>
 			<tr>
 				<td>判定結果：</td>
-				<td th:text="*{result}"></td>
+				<td> <!--th:text="*{result}"-->  
+					<th:block th:switch="*{result}">
+						<p th:case="'奇数'" th:text="*{result}" class="text-danger"></p>
+						<p th:case="'偶数'" th:text="*{result}" class="text-primary"></p>
+						<p th:case="'素数'" th:text="*{result}" class="text-success"></p>
+						<p th:case="'完全数'" th:text="*{result}" class="text-warning"></p>
+						<p th:case="'友愛数'" th:text="*{result}" class="text-secondary"></p>
+					</th:block>
+				</td>
 			</tr>
 		</table>
 		<form method="post" th:action="@{/home}" >
