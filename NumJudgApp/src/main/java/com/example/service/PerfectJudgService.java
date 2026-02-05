@@ -3,7 +3,6 @@ package com.example.service;
 public interface PerfectJudgService {
 
 	/** 完全数判定 */
-	public boolean perfectJudg(int inputNum);
+	boolean perfectJudg(int inputNum);
 
-	public int sumDivisors(int inputNum);
 }

@@ -34,17 +34,20 @@ public class NumJudgServiceImpl implements NumJudgService {
 	};
 	
 	/** 5件取得 */
+	@Override
 	public List<MNum> getFive(){
 		return mapper.findFive();
 	}
 	
 	
 	/** 前回数値取得 */
+	@Override
 	public MNum getOne() {
 		return mapper.findOne();
 	}
 	
 	/** 判定結果を返す */
+	@Override
 	public String numJudg(int inputNum, MNum mNum) {
 		String result = "未判定";
 		

@@ -9,6 +9,7 @@ import com.example.service.FriendlyJudgService;
 public class FriendlyJudgServiceImpl implements FriendlyJudgService {
 	
 	/** 友愛数判定 */
+	@Override
 	public boolean friendlyJudg(int inputNum, MNum mNum) {
 		//前回数値と今回数値の約数の和を求める
 		int sumPreNumDiv = sumDivisors(mNum.getInputNum());
@@ -23,7 +24,7 @@ public class FriendlyJudgServiceImpl implements FriendlyJudgService {
 	}
 	
 	/** 自身を含む約数の和の計算 */
-	public int sumDivisors(int num) {
+	private int sumDivisors(int num) {
 		int sum = 1;	
 		for(int i = 2; i <= num; i++) {
 			if(num % i == 0) {

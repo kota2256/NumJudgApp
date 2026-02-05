@@ -8,6 +8,7 @@ import com.example.service.PerfectJudgService;
 public class PerfectJudgServiceImpl implements PerfectJudgService {
 	
 	/** 完全数判定 */
+	@Override
 	public boolean perfectJudg(int inputNum) {
 		boolean result = true;
 		//約数の和を計算
@@ -20,13 +21,13 @@ public class PerfectJudgServiceImpl implements PerfectJudgService {
 	}
 	
 	/** 自身を除く約数の和の計算 */
-	public int sumDivisors(int num) {
-				int sum = 1;	
-				for(int i = 2; i < num; i++) {
-					if(num % i == 0) {
-						sum += i;
-					}
-				}
-				return sum;
+	private int sumDivisors(int num) {
+		int sum = 1;		// 1は全ての数字の約数
+		for(int i = 2; i < num; i++) {
+			if(num % i == 0) {
+				sum += i;
+			}
+		}
+		return sum;
 	}
 }

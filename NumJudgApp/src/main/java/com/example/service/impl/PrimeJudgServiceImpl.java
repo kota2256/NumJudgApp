@@ -8,6 +8,7 @@ import com.example.service.PrimeJudgService;
 public class PrimeJudgServiceImpl implements PrimeJudgService {
 
 	/** 素数判定 */
+	@Override
 	public boolean primeJudg(int inputNum) {
 		boolean result = true;
 		for (int i = 2 ; i < inputNum; i++) {		//2からinputNum-1までの数字で割り切れるかどうかを判定

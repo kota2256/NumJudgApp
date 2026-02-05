@@ -7,15 +7,15 @@ import com.example.model.MNum;
 public interface NumJudgService {
 	
 	/** 入力番号登録 */
-	public void addNum(MNum num);
+	void addNum(MNum num);
 	
 	/** 5件取得 */
-	public List<MNum> getFive();
+	List<MNum> getFive();
 
 	/** 判定結果を返す */
-	public String numJudg(int inputNum, MNum mNum);
+	String numJudg(int inputNum, MNum mNum);
 	
 	/** 前回数値取得 */
-	public MNum getOne();
+	MNum getOne();
 	
 }
